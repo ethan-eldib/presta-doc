@@ -1,0 +1,59 @@
+.contact-container {
+
+    .btn-contact {
+        @include btn-app;
+    }
+
+    .form-control {
+        font-size: 1.3rem;
+        background-color: #03030313;
+    }
+
+    textarea.form-control {
+        min-height: 20vh;
+        resize: none;
+    }
+
+    i {
+        font-size: 1.9rem;
+        color: $colorSecondary;
+        text-shadow: 2px 1px 2px #0000009e;
+        margin-bottom: 5px;
+    }
+
+    .fa-check {
+        color: white;
+    }
+
+    .bg-alert {
+        @include bg-alert('contact');
+    
+        #divider-contact {
+          border-top: 2px solid white;
+          width: 26%;
+          margin: 30px auto;
+        }
+    
+        h3,
+        h2,
+        h1,
+        p,
+        small {
+          color: white;
+        }
+      }
+
+      #contact_landLinePhone,
+      #contact_company,
+      #contact_subject,
+      label {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 0;
+        z-index: -1;
+      }
+
+}

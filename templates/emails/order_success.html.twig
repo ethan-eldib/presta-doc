@@ -1,0 +1,28 @@
+{% apply inline_css(source('@styles/order-success.css')) %}
+
+<div class="container">
+	<div
+		class="border">
+		<img id="logo-presta" src="{{ email.image('@images/presta-doc.png') }}" alt="logo">
+		<h1>Merci pour votre commande sur <span>Presta-Doc</span></h1>
+		<hr id="divider-order-success-email">
+
+		<h2>Cher(e)
+			{{ vars[0] }}
+			{{ vars[1] }},
+		</h2>
+		<p>
+			Votre commande sur le site Presta-Doc.fr a bien été validé. <br>
+            Vous pouvez consulter les détails de vos commandes sur votre espace personnel.
+		</p>
+
+		<strong>Merci à vous</strong>
+		<br>
+
+		<a href="https://presta-doc.fr">
+			<button id="btn-order-success-email">Vous rendre sur le site</button>
+		</a>
+	</div>
+</div>
+
+{% endapply %}

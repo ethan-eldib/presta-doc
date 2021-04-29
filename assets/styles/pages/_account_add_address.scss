@@ -1,0 +1,22 @@
+// Style de la page d'ajout d'adresse de facturation
+.container-add-billing-address {
+    .bg-alert {
+        @include bg-alert('add-address');
+    }
+
+    label {
+        font-weight: bolder;
+    }
+
+    .billing-address-name .form-group {
+        width: 50vh;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 25px;
+        
+    }
+
+    .btn-add-address {
+        @include btn-app;
+    }
+}

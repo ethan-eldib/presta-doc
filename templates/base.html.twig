@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{# Consentement des cookies (tarteaucitron) #}
+		<script src="{{ asset('tarteaucitron/tarteaucitron.js') }}"></script>
+		<script>
+			tarteaucitron.init({
+				"privacyUrl": "https://presta-doc.fr/mentions-legales", /* URL de la page de la politique de vie privée */
+
+				"hashtag": "#tarteaucitron", /* Ouvrir le panneau contenant ce hashtag */
+				"cookieName": "tarteaucitron", /* Nom du Cookie */
+
+				"orientation": "middle", /* Position de la bannière (top - bottom) */
+				"showAlertSmall": true, /* Voir la bannière réduite en bas à droite */
+				"cookieslist": true, /* Voir la liste des cookies */
+
+				"adblocker": true, /* Voir une alerte si un bloqueur de publicités est détecté */
+				"AcceptAllCta": true, /* Voir le bouton accepter tout (quand highPrivacy est à true) */
+				"highPrivacy": true, /* Désactiver le consentement automatique */
+				"handleBrowserDNTRequest": false, /* Si la protection du suivi du navigateur est activée, tout interdire */
+
+				"removeCredit": false, /* Retirer le lien vers tarteaucitron.js */
+				"moreInfoLink": true, /* Afficher le lien "voir plus d'infos" */
+				"useExternalCss": false, /* Si false, tarteaucitron.css sera chargé */
+
+				//"cookieDomain": ".my-multisite-domaine.fr", /* Cookie multisite */
+
+				"readmoreLink": "/cookiespolicy" /* Lien vers la page "Lire plus" */
+			});
+
+			tarteaucitron.user.gtagUa = 'G-NB34FPMWC0';
+        	tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+        	(tarteaucitron.job = tarteaucitron.job || []).push('gtag', 'googletagmanager', 'googlefonts');
+		</script>	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta charset="UTF-8">
+		<title>Presta-Doc - {% block title %}{% endblock %}</title>
+		<meta name="description" content="Gestionnaire administrative indépendante, prestation de service pour les TPE et PME dans le secteur de Gisors en normandie">
+		<meta property="og:locale" content="fr_FR">
+		<meta property="og:title" content="Bienvenue sur Presta-Doc">
+		<meta property="og:description" content="Gestionnaire administrative indépendante, prestation de service pour les TPE et PME dans le secteur de Gisors en normandie">
+		<meta property="og:url" content="https://presta-doc.fr/">
+		<meta property="og:site_name" content="Presta-Doc">
+		<link rel="icon" type="image/png" href="{{ asset('images/favicon/favicon.png') }}" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/c987021ebd.js" crossorigin="anonymous"></script>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		{% include "partials/header.html.twig" %}
+	
+		{% block body %}{% endblock %}
+		{% include "partials/footer.html.twig" %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</body>
+</html>

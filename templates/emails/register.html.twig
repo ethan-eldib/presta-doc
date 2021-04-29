@@ -1,0 +1,27 @@
+{% apply inline_css(source('@styles/register.css')) %}
+
+<div class="container">
+	<div
+		class="border">
+		<img id="logo-presta" src="{{ email.image('@images/presta-doc.png') }}" alt="">
+		<h1>Bienvenue sur <span>Presta-Doc</span> !</h1>
+		<hr id="divider-register-email">
+
+		<h2>Cher(e)
+			{{ vars[0] }}
+			{{ vars[1] }},
+		</h2>
+		<p>
+			Vous avez reçu cette email parce que vous vous êtes récemment inscrit à notre site internet.
+		</p>
+
+		<strong>Merci à vous</strong>
+		<br>
+
+		<a href="https//presta-doc.fr">
+			<button id="btn-register-email">Vous rendre sur le site</button>
+		</a>
+	</div>
+</div>
+
+{% endapply %}

@@ -1,0 +1,92 @@
+<header class="container-header text-center">
+	<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand" href="{{ path('homepage') }}">
+			<img class="logo-presta-doc" src="{{ asset('images/logo/presta-doc.png') }}" alt="Logo presta-doc">
+		</a>
+		<div class="container-fluid">
+			<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ path('homepage') }}">Accueil
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href=" {{ path('folders_new') }}">Déposer un document
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('pack_doc') }}">Packs Presta-Doc
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('contact') }}">Contact
+						</a>
+					</li>
+				
+				</ul>
+				<hr id="hr-divider-navbar">
+				<ul class="navbar-account">
+					{% if app.user %}
+						<button id="btn-js">
+							<i class="fas fa-user"></i>
+							{{app.user.firstname}}
+							<i class="fas fa-arrow-down"></i>
+						</button>
+						<li class="dropdown" id="dropdown-toggle">
+								<a href="{{ path('my_account') }}" class="dropdown-item">
+									<i class="fas fa-user-circle"></i>
+									Mon compte
+								</a>
+								<a href="{{ path('account_order') }}" class="dropdown-item">
+									<i class="fas fa-tags"></i>
+									Mes commandes
+								</a>
+								<a href="{{ path('cart') }}" class="dropdown-item">
+									<i class="fas fa-cart-arrow-down"></i>
+									Mon panier
+								</a>
+								<div class="dropdown-divider"></div>
+								<a href="{{ path('account_logout') }}" class="dropdown-item">
+									<i class="fas fa-power-off"></i>
+									Déconnexion
+								</a>
+								<a href="{{ path('account_password') }}" class="dropdown-item">
+									<small>
+										<i class="fas fa-pencil-alt"></i>
+										Modifier mot de passe
+									</small>
+								</a>
+						</li>
+					{% else %}
+						<li class="nav-item inscription">
+							<a class="nav-link" href="{{ path('register') }}">Inscription</a>
+							<hr id="divider-inscription">
+						</li>
+						<li class="nav-item connexion">
+							<a class="nav-link" href="{{ path('account_login') }}">Connexion</a>
+						</li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+{# Message flash #}
+{% include "partials/_flash_message.html.twig" %}
+{% block javascripts %}
+	<script>
+		// Dropdown toggle 
+		const btn = document.getElementById('btn-js');
+		const list = document.getElementById('dropdown-toggle');
+
+		btn.addEventListener('click', () => {
+			list.classList.toggle('is-visible-dropdown');
+		});
+	</script>
+{% endblock %}
+

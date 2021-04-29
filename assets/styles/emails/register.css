@@ -1,0 +1,49 @@
+h1,
+h2,
+p,
+span,
+button,
+a {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+span {
+  color: #7D3157;
+}
+
+.border {
+  border: 20px solid #7D3157;
+  padding: 15px 5px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#logo-presta {
+  margin-top: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+  max-width: 128px;
+  max-height: 128px;
+}
+
+#btn-register-email {
+  background: #7D3157;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#divider-register-email {
+  width: 40%;
+  color: #7D3157;
+}

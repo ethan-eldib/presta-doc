@@ -1,0 +1,21 @@
+.index-order-container {
+    .bg-alert {
+        @include bg-alert('index-order');
+    }
+
+    .badge-dark {
+        background-color: $colorSecondary;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    .fa-info-circle {
+        font-size: 1.4rem;
+        color: $colorSecondary;
+
+        &:hover {
+            color: lighten($colorSecondary, 10%);
+            transition: 0.3s ease-in-out;
+        }
+    }
+}

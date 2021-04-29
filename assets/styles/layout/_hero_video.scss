@@ -1,0 +1,140 @@
+// Style du hero de la page d'accueil qui affiche une vidéo
+.hero-video {
+  margin-top: 25px;
+
+  .overlay {
+    background: rgba(black, 0.5);
+  }
+
+  video {
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: grayscale(0.1);
+  }
+
+  .main-title-hero {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      margin-top: 50px;
+      color: $textColorPrimary;
+      text-transform: uppercase;
+      letter-spacing: 35px;
+      line-height: 1.2;
+      font-size: $mediumFontSize;
+
+      #home-title-span {
+        display: block;
+        color: $colorSecondary;
+        font-size: 7.7rem;
+        letter-spacing: -20.3px;
+      }
+    }
+  }
+
+  .div-content-hero {
+
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    background: #99999954;
+    border-radius: 5px;
+
+    .content-hero {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $textColorPrimary;
+      margin-bottom: 40px;
+      border-radius: 16px;
+    }
+
+    .btn-hero {
+      @include btn-app($colorSecondary);
+    }
+
+  }
+
+  @include md {
+    .main-title-hero {
+      h1 {
+        font-size: $smallFontSize;
+        letter-spacing: 9px;
+        margin-top: 10px;
+
+        #home-title-span {
+          font-size: 4.7rem;
+          letter-spacing: -10px;
+        }
+      }
+    }
+
+    .div-content-hero {
+      width: 100%;
+
+      .content-hero {
+        font-size: 1.1rem;
+      }
+
+      .btn-hero {
+        @include btn-app($colorSecondary);
+      }
+
+    }
+  }
+
+}
+
+@include sm {
+  .hero-video .main-title-hero h1 {
+    display: none !important;
+  }
+
+  .hero-video video {
+    display: none;
+  }
+
+  .hero-video .div-content-hero {
+    background: transparent !important;
+  }
+
+  .hero-video .div-content-hero .content-hero {
+    font-size: 1.7rem !important;
+  }
+
+  .hero-video .div-content-hero .btn-hero {
+    font-size: 1.4rem !important;
+  }
+
+  .container-header .navbar-collapse {
+    margin: auto !important;
+  }
+
+  .container-header .navbar-collapse a {
+    font-size: 1.5rem !important;
+  }
+
+  .section-homepage-informations .box-informations p {
+    text-align: left;
+    font-size: 1.25rem;
+  }
+
+  .section-homepage-informations .box-informations ul li {
+    font-size: 1.3rem;
+  }
+
+  .section-homepage-informations .box-informations ul {
+    padding-left: 0;
+  }
+
+}

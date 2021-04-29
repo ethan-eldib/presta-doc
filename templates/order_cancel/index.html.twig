@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Echec de la transaction.
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5">
+		<h2>Echec de la transaction.</h2>
+		<p>
+			Bonjour
+			{{ order.user.firstname }}
+			{{ order.user.lastname }},
+			<br>
+			Nous vous informons que votre commande n°
+			{{ order.reference }} n'a pas aboutie.
+			<br>
+			Les informations concernant l'echec de cette transaction vient de vous être envoyée à l'adresse email
+			{{ order.user.email }}.
+            <hr>       
+            <p>
+                Pour réessayer le paiement, cliquez <a href="{{ path('order') }}">ici</a>.           
+            </p>
+		</p>
+	</div>
+{% endblock %}

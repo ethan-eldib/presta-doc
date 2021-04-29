@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mes adresses de facturation
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5 billing-address-container">
+		<div class="alert bg-alert text-center mt-5">
+			<h1 class="alert-heading mb-3">Mes adresses de facturation.</h1>
+			<hr id="divider-billingAddress">
+			<p class="mb-0">Vous pouvez gérer ici vos adresses de facturation.</p>
+			<p class="mb-0 mt-3">
+				<i class="fas fa-arrow-circle-left"></i>
+				<a href="{{ path('my_account') }}">Retour</a>
+			</p>
+			<a href="{{ path('add_billing_address') }}">
+				<button class="btn-add-address">Ajouter une adresse</button>
+			</a>
+		</div>
+
+		{% if app.user.addresses|length == 0 %}
+			<div class="mt-5 alert alert-warning text-center">
+				<h3 class="alert-heading mb-3">Aucune adresse enregistrée</h3>
+				<hr>
+				<p class="mb-0">Vous n'avez pas encore ajouté d'adresse de facturation dans votre espace client.
+				</p>
+				<p class="mb-0">Pour en ajouter une, veuillez
+					<a href="{{ path('add_billing_address') }}">cliquer ici</a>.
+				</p>
+			</div>
+
+		{% else %}
+			<div class="row mt-5">
+				{% for address in app.user.addresses %}
+					<div class="col-md-4">
+						<div class="card" style="width: 18rem;">
+							<div class="card-body">
+								<h5 class="card-title">{{ address.name }}</h5>
+								<hr>
+								<p class="card-text">
+									{{ address.address }},
+									<br>
+									{{ address.postal }}
+									-
+									{{ address.city }}
+									-
+									{{ address.country }}
+									<br>
+								</p>
+								<a class="link-crud-billing-address" href="{{ path('edit_billing_address', { id: address.id }) }}">
+									<i class="fas fa-edit"></i>
+								</a>
+								|
+								<a class="link-crud-billing-address" href="{{ path('delete_billing_address', { id: address.id }) }}">
+									<i class="fas fa-trash"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

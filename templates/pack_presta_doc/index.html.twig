@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Packs Presta-Doc
+{% endblock %}
+
+{% block body %}
+	<div class="container text-center my-5 container-card-pack">
+		<div class="alert bg-alert text-center mt-5">
+			<h1 class="alert-heading mb-3">Packs Presta-Doc</h1>
+			<hr id="divider-pack">
+			<p class="mb-0">
+				C'est dans cette espace que vous trouverez la liste de nos packs.
+			</p>
+			<p class="mb-0">
+				<a href="{{ path('contact') }}">
+					<br>
+					<button class="btn-quote-pack mt-3">
+						<small>
+							Aucun des packs ne correspond à vos attente ? 
+						</small> <br>
+						<hr>
+						<small>
+							Contactez-moi pour un
+						</small> <br><br>
+						DEVIS SUR-MESURE
+					</button>
+				</a>
+			</p>
+		</div>
+		<div class="row block-pack">
+			{% for pack in packs %}
+				{% include "pack_presta_doc/_card_pack.html.twig" %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

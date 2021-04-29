@@ -1,0 +1,6 @@
+.container-order-success {
+    .bg-alert {
+        @include bg-alert('order-success', $colorSecondary, goldenrod);
+    }
+
+}

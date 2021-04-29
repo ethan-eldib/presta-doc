@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Ma commande
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5 container-order-show">
+		<h2 class="text-center mb-5">
+			Détails de ma commande
+		</h2>
+		<div class="card">
+			<div class="card-body">
+				<p class="card-text">
+					<strong>
+						Commande passée le :
+					</strong>
+					{{ order.createdAt|date('d/m/Y') }}
+					<br>
+					<strong>Référence de ma commande :</strong>
+					<span class="badge bagde-pill badge-primary mb-4">
+						{{ order.reference }}
+					</span> <br>
+					<strong>Détails :</strong> 
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Nom du pack</th>
+								<th>Quantité</th>
+								<th>Prix unitaire</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for pack in order.orderDetails %}
+								<tr>
+									<td>{{ pack.product }}</td>
+									<td>x
+										{{ pack.quantity }}</td>
+									<td>{{ pack.price }}
+										€</td>
+									<td>{{ pack.getTotal }}
+										€</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</p>
+				<p class="card-text mt-5">
+					<a href="{{ path('account_order') }}">
+						<i class="fas fa-arrow-circle-left"></i>
+						Mes commandes
+					</a>
+				</p>
+			</div>
+		</div>
+
+		<p class="mt-5"></p>
+	</div>
+{% endblock %}

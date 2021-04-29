@@ -1,0 +1,140 @@
+h1,
+h2,
+p,
+span,
+button,
+a {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+span {
+  color: #7D3157;
+}
+
+.border {
+  border: 20px solid #7D3157;
+  padding: 15px 5px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#logo-presta {
+  margin-top: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+}
+
+#btn-contact-email {
+  background: #7D3157;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#divider-contact-email {
+  width: 40%;
+  color: #7D3157;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+.content {
+  width: 88%;
+  margin: 0 auto;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+
+  .content p {
+    text-align: justify;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead tr {
+    border: none;
+    position: absolute;
+    line-height: 2;
+    display: flex;
+    font-size: 0.8rem;
+    flex-direction: column;
+    width: 0;
+  }
+
+  table td:last-child {
+    padding-top: 55px;
+    text-align: justify;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}

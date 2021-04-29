@@ -1,0 +1,71 @@
+@mixin card-app($bgColorHeader: black, $borderColorCircle: white, $borderColorCard: white) {
+
+    border: 2px solid $borderColorCard;
+
+    .pricing-header {
+        background-color: $bgColorHeader;
+        margin: -6px;
+        border-radius: 3px;
+        margin-bottom: 25px;
+    }
+
+    .price-circle {
+        border: 2px solid $borderColorCircle;
+        position: relative;
+        background: white;
+        bottom: -29px;
+        margin: 0 auto;
+        padding: 9px 0px;
+        width: 80px;
+        border-radius: 50%;
+        font-weight: bold;
+    }
+}
+
+
+@mixin btn-app($btnColor: $colorSecondary, $textColor: white) {
+    background-color: $btnColor;
+    color: $textColor;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+    &:hover {
+        background-color: lighten($btnColor, 6%);
+        transition: 0.4s ease-in-out;
+    }
+
+    @include sm {
+        font-size: $xsFontSizeButton;
+    }
+}
+
+@mixin bg-alert($dividerName, $bgColor:$colorSecondary, $linkColor: white) {
+    background-color: $bgColor;
+    padding: 50px;
+    margin-bottom: 85px;
+    margin-top: 99px !important;
+
+    #divider-#{$dividerName} {
+        border-top: 2px solid white;
+        width: 26%;
+        margin: 30px auto;
+    }
+
+    h3,
+    h2,
+    h1,
+    p,
+    small {
+        color: white;
+    }
+
+    a {
+        color: $linkColor;
+        text-decoration: none;
+        &:hover {
+            color: darken($linkColor, 15%);
+        }
+    }
+}

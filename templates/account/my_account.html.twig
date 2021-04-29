@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mon compte
+{% endblock %}
+
+{% block body %}
+	<div class="container account-user-container">
+		<div class="alert bg-alert text-center mt-5">
+			<h3 class="alert-heading mb-3">Bienvenue  sur votre espace personnel
+				{{ app.user.firstname }}.</h3>
+			<hr id="divider-account-user">
+			<p class="mb-0">Vous pouvez gérer ici vos informations personnelles.</p>
+			{% if is_granted('ROLE_ADMIN') %}
+				<small>
+					(Vous êtes administrateur. Pour y accéder cliquez sur ce
+					<a href="/admin">lien</a>)
+				</small>
+				<br>
+			{% endif %}
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="account-item">
+					<div class="icon-account-user">
+						<a href="{{ path('account_password') }}">
+							<i class="fas fa-unlock-alt"></i>
+							<br>
+							Modifier mon mot de passe
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="account-item">
+					<div class="icon-account-user">
+						<a href="{{ path('billing_address') }}">
+							<i class="far fa-address-card"></i>
+							<br>
+							Mes adresses de facturation
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="account-item">
+					<div class="icon-account-user">
+						<a href="{{ path('account_order') }}">
+							<i class="fas fa-tags"></i>
+							<br>
+							Voir mes commandes
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}

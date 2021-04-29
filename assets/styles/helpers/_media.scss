@@ -1,0 +1,34 @@
+// Appareil de petite taille
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Appareil de taille moyenne
+@mixin md {
+    @media (max-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Appareil de grande taille
+@mixin lg {
+    @media (max-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Appareil de très grande taille
+@mixin xl {
+    @media (max-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+// Paramètres personnalisés
+@mixin custom-media($screen) {
+    @media (max-width: #{$screen+'px'}) {
+        @content;
+    }
+}

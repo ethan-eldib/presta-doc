@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Validation de ma commande
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5 container-order">
+		<div class="alert bg-alert text-center">
+			<h1 class="alert-heading mb-3">Je passe ma commande</h1>
+			<hr id="divider-order-index">
+			<p class="mb-0">
+				Sélectionnez votre adresse de facturation avant de valider votre commande.
+			</p>
+			<p class="mb-0">
+				Vous souhaitez
+				<a href="{{ path('add_billing_address') }}">ajouter</a>
+				une adresse de facturation ?
+			</p>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6 billing-addresses">
+				{% if app.user.addresses|length > 0 %}
+					{% set formHtml %}
+					{{form_start(form, {action:path('order_recap')})}}
+					<b>Choisir une adresse de facturation</b><br>
+					{{form_row(form.addresses)}}
+					<button class="btn-order mt-3">
+						Valider ma commande
+					</button>
+					{{form_end(form)}}
+					{% endset %}
+
+					{{ formHtml|replace({'[br]' : '<br/>'})|raw }}
+				{% else %}
+					<div class="mt-2 alert alert-warning">
+						<h3 class="alert-heading mb-3">Aucune adresse enregistrée.</h3>
+						<hr>
+						<p class="mb-0">
+							Une adresse de facturation est requise pour finaliser votre commande.
+						</p>
+						<p class="mb-0">Pour en ajouter une, veuillez
+							<a href="{{ path('add_billing_address') }}">cliquer ici</a>.
+						</p>
+					</div>
+				{% endif %}
+			</div>
+			<div class="col-md-6 text-center recap-order">
+				<b>Récapitulitif de ma commande</b><br>
+				{% for pack in cart %}
+					<div class="row">
+						<div class="col-2">
+							<img class="logo-pack" src="{{ pack.pack.illustration }}" alt="logo pack">
+						</div>
+						<div class="col-8 my-auto">
+							{{ pack.pack.name }}
+							<br>
+						</div>
+						<div class="col-2 my-auto">
+							x
+							{{ pack.quantity }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

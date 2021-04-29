@@ -1,0 +1,77 @@
+// Style de la page de dépôt des documents
+.container-deposit-document {
+
+  div#folders_folders_errors {
+    z-index: 999999;
+    position: relative;
+    bottom: -226px;
+  }
+
+  .file-drop-area {
+    position: relative;
+    padding: 25px;
+    border: 1px dashed rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    transition: 0.2s;
+    text-align: center;
+
+    label {
+      font-size: 1.5rem;
+    }
+
+    .form-control {
+      max-width: 40%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.7rem;
+    }
+
+    #content-description-drag {
+      position: relative;
+      bottom: -120px;
+      font-size: 18px;
+      z-index: 1;
+    }
+
+    #icon-uploads {
+      font-size: 105px;
+      position: relative;
+      bottom: -82px;
+      color: $colorSecondary;
+      z-index: 1;
+    }
+
+    .custom-file-label {
+      display: none;
+    }
+
+    .custom-file {
+      background-color: lighten($colorSecondary, 50%);
+      position: relative;
+      top: -95px;
+      height: 250px;
+      border-radius: 5px;
+      border: 1px dashed black;
+    }
+
+    .custom-file-input {
+      height: 100%;
+    }
+
+    .required:after {
+      content: "*";
+      font-weight: bold;
+      color: red;
+      margin-left: 5px;
+    }
+
+    .btn-folders-submit {
+      @include btn-app;
+    }
+  }
+
+  .bg-alert {
+    @include bg-alert('deposit-document');
+  }
+
+}

@@ -1,0 +1,29 @@
+/*
+* Corp de la page
+* Typo, color, fontFamily, fontSize
+*/
+body {
+
+
+  background-color: #d1d0d054;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $title;
+    color: $textColorPrimary;
+  }
+
+  p,
+  label,
+  button,
+  span,
+  small {
+    font-family: $textPrimary;
+    color: $textColorPrimary;
+  }
+
+}

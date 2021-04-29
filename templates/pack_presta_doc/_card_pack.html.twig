@@ -1,0 +1,19 @@
+<div class="card card-{{ loop.index }}">
+	<div class="pricing-header">
+	<img src="{{ pack.illustration }}" id="img-tags-pack-card" alt="Image du pack">
+		<h2 class="card-title">{{ pack.name }}</h2>
+		<div class="price-circle">
+			<p class="card-price">{{ pack.price }} €</p>
+			<span class="info">/ Mois</span>
+		</div>
+	</div>
+	<div class="card-content">
+			{{ pack.description|raw }}
+	</div>
+	<a id="link-buy-card" href="{{ path('add_to_cart', { id : pack.id }) }}">
+		<button class="btn-card">
+			<i class="fas fa-cart-arrow-down 2x mr-2"></i>
+			ACHETER
+		</button>
+	</a>
+</div>

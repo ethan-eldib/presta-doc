@@ -1,0 +1,41 @@
+<div class="container">
+
+	{{ form_start(form) }}
+
+	<div class="file-drop-area">
+		{{ form_row(form.title) }}
+		<div class="content-drag">
+			<i class="fas fa-cloud-upload-alt" id="icon-uploads"></i>
+			<p id="content-description-drag">
+				Faites glisser vos fichiers ici ou cliquez dans cette zone.
+			</p>
+		</div>
+		{{ form_row(form.folders) }}
+		<p id="count-files"></p>
+		<p id="files-name"></p>
+
+		<button class="btn-folders-submit">
+			Déposer
+		</button>
+	</div>
+	{{ form_end(form) }}
+</div>
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('app') }}
+		<script>
+			$(document).ready(function () {
+				$('input[type="file"]').change(function (e) {
+					let numberFile = e.target.files.length;
+					let fileName = [];
+					$('#count-files').text (`Vous avez sélectionné ${numberFile} fichier(s)`);
+
+					for (let i = 0; i < e.target.files.length; i++) {
+						let name = e.target.files[i].name;
+						fileName.push(name);
+						$('#files-name').text (`Nom du ou des fichier(s)  : ${fileName}`);
+					}
+				});
+			});
+		</script>
+{% endblock %}

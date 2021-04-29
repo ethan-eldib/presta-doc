@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mon panier
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid container-cart">
+		<div class="container alert bg-alert text-center mt-5">
+			<h1 class="alert-heading mb-3">Mon panier</h1>
+			<hr id="divider-cart">
+			<p class="mb-0">
+				Retrouvez l'ensemble des packs que vous avez ajouté à votre panier.
+			</p>
+		</div>
+		{% include "/cart/_cart.html.twig" %}
+	</div>
+{% endblock %}

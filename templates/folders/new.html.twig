@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Déposez vos documents
+{% endblock %}
+
+{% block body %}
+	<div class="container container-deposit-document">
+		<div class="alert bg-alert text-center mt-5">
+			<h1 class="alert-heading mb-3">Déposez vos documents</h1>
+			<hr id="divider-deposit-document">
+			<p class="mb-0">
+				Formats de fichier acceptés (PDF, WORD ou EXCEL)		
+			</p>
+			<small>* Vous pouvez envoyer des fichierss d'une taille maximale de 5 Mo. Si vous envoyez plusieurs fichiers, leur taille totale ne peut pas dépasser cette limite.</small>
+		</div>
+
+		{% if app.user %}
+			{{ include('folders/_form.html.twig') }}
+		{% else %}
+			<div class="alert alert-danger" role="alert">
+				<h3 class="alert-heading text-center mb-3">Inscription gratuite sur Presta-doc</h3>
+				<p class="lead">
+					Il semblerait que vous ne soyez pas encore inscrit sur notre site pour vous permettre de déposer et nous transmettre des documents à traiter.
+				</p>
+				<hr>
+				<p class="mb-0">
+					Pour ce faire c'est très simple, cliquez
+					<a href="{{ path('register') }}">ici pour vous inscrire</a>
+					c'est gratuit.
+				</p>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

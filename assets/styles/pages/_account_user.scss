@@ -1,0 +1,66 @@
+.account-user-container {
+
+  .row {
+    margin-top: 100px;
+  }
+
+  small {
+    margin-top: 25px;
+  }
+
+
+
+  .icon-account-user i {
+    font-size: 5rem;
+    color: white;
+    text-shadow: 3px 3px 5px #0000009e;
+    margin-bottom: 15px;
+
+    &:hover {
+      color: lighten($colorSecondary, 10%);
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  .bg-alert {
+    background-color: $colorSecondary;
+    padding: 50px;
+
+    #divider-account-user {
+      border-top: 2px solid white;
+      width: 26%;
+      margin: 30px auto;
+    }
+
+    h3,
+    h2,
+    h1,
+    p,
+    small {
+      color: white;
+    }
+
+    a {
+      color: goldenrod;
+    }
+  }
+
+  .account-item {
+    background-color: #00000026;
+    padding: 24px 5px;
+    margin-top: 15px;
+    min-height: 25vh;
+    text-align: center;
+    border-radius: 5px;
+
+    a {
+      text-decoration: none;
+      color: #070707c4;
+
+      &:hover {
+        color: lighten($colorSecondary, 10%);
+        transition: 0.2s ease-in-out;
+      }
+    }
+  }
+}

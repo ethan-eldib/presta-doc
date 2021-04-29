@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg">
+	<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+
+			<li class="nav-item active">
+				<a class="nav-link" href="{{ path('admin_dashboard') }}">
+					<i class="fas fa-chart-line"></i>
+					Dashboard
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{ path('admin_user') }}">
+					<i class="fas fa-users"></i>
+					Utilisateurs
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{ path('admin_folders_index') }}">
+					<i class="fas fa-folder-open"></i>
+					Dossiers/Documents
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{ path('admin_order') }}">
+					<i class="fas fa-tags"></i>
+					Commandes
+				</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" target="_blank" href="{{ path('homepage') }}">
+					<i class="fas fa-home"></i>
+					Accueil du site
+				</a>
+			</li>
+			{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('admin_account_logout') }}">Déconnexion</a>
+				</li>
+				<span class="navbar-divider-line">
+				{% endif %}
+			</ul>
+		</div>
+	</nav>
+
+	{# Message flash #}
+	{% include "partials/_flash_message.html.twig" %}

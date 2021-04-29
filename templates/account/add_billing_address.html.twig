@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Ajouter une adresse de facturation
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5 container-add-billing-address">
+		<div class="alert bg-alert text-center">
+			<h1 class="alert-heading mb-3">Ajouter une adresse de facturation</h1>
+			<hr id="divider-add-address">
+			<p class="mb-0">
+				<i class="fas fa-arrow-circle-left"></i>
+				<a href="{{ path('my_account') }}">Retour sur votre compte</a>	
+			</p>
+		</div>
+
+		{{ form_start(form) }}
+		<div class="row">
+			<div class="col-md-12 billing-address-name">
+				{{ form_row(form.name) }}
+			</div>
+			<hr>
+			<div class="col-md-6">{{ form_row(form.lastname) }}</div>		
+			<div class="col-md-6">{{ form_row(form.firstname) }}</div>
+			<div class="col-md-6">{{ form_row(form.company) }}</div>
+			<div class="col-md-6">{{ form_row(form.address) }}</div>
+			<div class="col-md-6">{{ form_row(form.postal) }}</div>
+			<div class="col-md-6">{{ form_row(form.city) }}</div>
+			<div class="col-md-6">{{ form_row(form.country) }}</div>
+			<div class="col-md-6">{{ form_row(form.phone) }}</div>
+		</div>
+        <button class="btn-add-address">
+			Ajouter
+		</button>
+		{{ form_end(form) }}
+
+
+	</div>
+{% endblock %}

@@ -1,0 +1,127 @@
+// Style du pied de page 
+.footer-presta-doc {
+  background: $colorSecondary;
+  position: relative;
+  margin-top: 300px;
+
+  .logo-presta-doc {
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 10%;
+    box-shadow: 1px 0px 3px #000000ad;
+
+  }
+
+  .footer-icon {
+    text-align: center;
+
+    i {
+      color: #ffffff;
+      font-size: 26px;
+      vertical-align: super;
+    }
+  }
+
+  h4 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  span {
+    color: white;
+    font-size: 15px;
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-logo img {
+    max-width: 200px;
+    margin-bottom: 30px;
+  }
+
+  .copyright-area {
+    background: #202020;
+    text-align: center;
+    padding: 35px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .copyright-text p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+  }
+
+  #year-copyright {
+    color: lighten($colorSecondary, 10%);
+  }
+
+  .footer-menu ul {
+    margin-left: -39px;
+  }
+
+  .footer-menu li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .footer-menu li a {
+    font-size: 14px;
+    color: white;
+
+    &:hover {
+      color: lighten($colorSecondary, 10%);
+      transition: 0.3s ease-in-out;
+      text-decoration: none;
+    }
+  }
+
+  .hr-footer {
+    width: 10%;
+    border-top: 1px solid white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@include lg {
+  .footer-presta-doc {
+    .copyright-area {
+      display: block !important;
+    }
+
+    .footer-menu ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 35px;
+      margin-bottom: 35px;
+    }
+
+    .footer-menu li {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@include sm {
+  .footer-presta-doc .footer-icon i {
+    font-size: 55px;
+  }
+
+  .footer-presta-doc span {
+    color: white;
+    font-size: 22px;
+  }
+
+  .footer-presta-doc .footer-menu li a {
+    font-size: 22px;
+  }
+
+}

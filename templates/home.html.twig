@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Bienvenue sur notre site.
+{% endblock %}
+
+{% block body %}
+	<section class="hero-video ">
+		<video src="/videos/hero-video.mp4" autoplay loop playsinline muted></video>
+		<div class="main-title-hero">
+			<h1>
+				Bienvenue sur
+				<span id="home-title-span">Presta-Doc</span>
+			</h1>
+		</div>
+		<div class="div-content-hero">
+			<p class="content-hero">
+				Vous êtes un chef d’entreprise ou un entrepreneur débordé ? Confiez-moi vos tâches administratives !
+			</p>
+			<a href="{{ path('contact') }}">
+				<button class="btn-hero">Me contacter</button>
+			</a>
+		</div>
+	</section>
+	
+	<section class="section-homepage-informations mx-auto">
+		<div class="box-informations about-me">
+			<h2 class="text-center">Qui suis-je ?</h2>
+			<hr class="divider-informations">
+			<p>
+				Avec plus de 10 ans d’expérience professionnelle en qualité de gestionnaire administrative dans des secteurs variés (banque, industrie pharmaceutique , service informatique, association, société de formation, etc.). <br><br>
+
+				Je mets à profit mon savoir-faire ainsi que mes connaissances directement au service des entreprises ou des associations (PME, TPE, artisan, commerçant, profession libérale, etc.). <br><br>
+
+				J’interviens et je peux me déplacer aux alentours de la commune de Gisors dans l’Eure et certaines villes du Val d'Oise : Cergy, Chars, Marine. <br><br>
+
+				Pour d’autres lieux d’intervention, n’hésitez pas à me contacter.
+			</p>
+		</div>
+		<div class="box-informations my-expertise">
+			<h2 class="text-center">Ce que je propose</h2>
+			<hr class="divider-informations">
+			<p>
+				Je vous propose mon expertise en tant qu'indépendante dans le domaine administratif.
+			</p>
+			<h5 class="text-center mt-5">Gestion administrative et comptable</h5>
+			<hr class="divider-informations">
+			<ul>
+				<li><i class="fas fa-angle-right mr-2"></i> Démarches auprès des organismes d’État (URSSAF, Impôts…)</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Rédaction de courriers et de comptes-rendus</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Réalisation de tableaux de bord</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Suivi des recettes, dépenses et recouvrement</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Pointage des relevés bancaires</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Rapprochement des factures et des bons de livraison</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Établissement de devis</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Établissement de factures</li>
+				<li><i class="fas fa-angle-right mr-2"></i> Saisie comptable</li>
+			</ul>
+			<h5 class="text-center mt-5">Gestion du personnel</h5>
+			<hr class="divider-informations">
+			<ul>
+				<li><i class="fas fa-angle-right mr-2"></i>Gestion des notes de frais</li>
+				<li><i class="fas fa-angle-right mr-2"></i>Mise à jour du registre du personnel</li>
+				<li><i class="fas fa-angle-right mr-2"></i>Suivi des absences</li>
+				<li><i class="fas fa-angle-right mr-2"></i>Suivi des visites médicales</li>
+				<li><i class="fas fa-angle-right mr-2"></i>Tenu des éléments variables de paie</li>
+				<li><i class="fas fa-angle-right mr-2"></i>Aide au recrutement</li>
+			</ul>
+		</div>
+		<div class="box-informations why-me">
+			<h2 class="text-center">Pourquoi me faire confiance ?</h2>
+			<hr class="divider-informations">
+			<div class="d-flex">
+				<i class="fas fa-thumbs-up"></i>
+				<p>GESTION PONCTUELLE OU RÉGULIÈRE</p>
+			</div>
+			<div class="d-flex">
+				<i class="fas fa-thumbs-up"></i>
+				<p>GAIN DE TEMPS POUR VOUS</p>
+			</div>
+			<div class="d-flex">
+				<i class="fas fa-thumbs-up"></i>
+				<p>DU SUR-MESURE</p>
+			</div>
+			<div class="d-flex">
+				<i class="fas fa-thumbs-up"></i>
+				<p>RENTABILITÉ (aucune charge URSSAF pour vous, seulement une facture !)</p>
+			</div>
+			<div class="d-flex">
+				<i class="fas fa-thumbs-up"></i>
+				<p>CONFIDENTIALITÉ (un engagement vous sera fourni avant toutes prestations)</p>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

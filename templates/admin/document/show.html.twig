@@ -1,0 +1,77 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+	Contenu du dossier
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5 ">
+		{% if documents|length > 0 %}
+
+			{% for folder in folders %}
+				<h1 class="text-center mb-5">Contenu du dossier "{{ folder.title }}"</h1>
+				<h4 class="text-center mt-0">Dossier n°
+					{{ folder.id }}</h4>
+			{% endfor %}
+			<a href="{{ path('admin_folders_index') }}">
+				<i class="fas fa-arrow-circle-left"></i>
+				Liste des dossiers
+			</a>
+			<hr>
+			<h5 class="mt-5 text-center">
+				Envoyé par :
+				{{ documents[0].user.email }}
+				<small>
+					(id n°
+					{{ documents[0].user.id }})
+				</small>
+			</h5>
+			{% for document in documents %}
+				<div class="col-md-8 mx-auto mt-5 card">
+					<embed src="{{ asset('/uploads/' ~ document.name) }}" type='application/pdf'>
+					<a class="mt-2" style="max-width:24px;" href="{{ asset('/uploads/' ~ document.name) }}" download="{{document.name}}">
+						<i class="fas fa-download"></i>
+					</a>
+					<a style="max-width:24px; color:red;" href="{{ path('admin_document_delete', { id: document.id }) }}" data-delete data-token="{{ csrf_token('delete' ~ document.id) }}">
+						<i class="fas fa-trash"></i>
+					</a>
+				</div>
+			{% endfor %}
+		{% else %}
+			<div class="alert alert-warning">
+				<p class="text-center">Aucun document dans la base de données</p>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<script>
+		window.onload = () => {
+			let links = document.querySelectorAll("[data-delete]");
+
+			for(link of links){
+				link.addEventListener("click", function(e){
+					e.preventDefault();
+
+					if(confirm("Supprimer ce document ?")){
+						fetch(this.getAttribute("href"),{
+							method: "DELETE",
+							headers: {
+								"X-Requested-With": "XMLHttpRequest",
+								"Content-Type": "application/json"
+							},
+							body: JSON.stringify({"_token": this.dataset.token})
+						}).then(
+							response => response.json()
+						).then(data => {
+							if(data.success)
+								this.parentElement.remove()
+							else
+								alert(data.error)		
+						}).catch(e => alert(e))
+					}
+				})
+			}
+		}
+	</script>
+{% endblock %}
